@@ -8,14 +8,14 @@ export default async function createTeacher(
 
 ){
 
-    const {nome, email, data_nasc, turma_id} = req.body
+    const {nome, email, data, turma_id} = req.body
 
     try {
 
         if (
             !nome ||
             !email ||
-            !data_nasc ||
+            !data ||
             !turma_id
 
 
@@ -36,7 +36,7 @@ export default async function createTeacher(
             return year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
         }
 
-        const formattedDataNascimento: string = formatDate(data_nasc)
+        const formattedDataNascimento: string = formatDate(data)
 
         await insertTeacher(
             id,

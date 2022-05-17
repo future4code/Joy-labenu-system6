@@ -19,8 +19,7 @@ export default async function getAgeStudentById(
 
         }
             const result =  await connection('Estudante')
-            const newData = new Date(result[0].data)
-            console.log(newData)
+            const newData = new Date(result[0].data_nasc)
             const dateAtual= new Date()
             const age = dateAtual.getFullYear() - newData.getFullYear()
 

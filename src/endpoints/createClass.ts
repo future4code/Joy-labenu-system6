@@ -22,16 +22,6 @@ export default async function createClass(
 
         const id: string = Date.now() + Math.random().toString()
 
-        // function formatDate(date: string): string {
-        //     const day = date.split("/")[0];
-        //     const month = date.split("/")[1];
-        //     const year = date.split("/")[2];
-        //     return year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
-        // }
-
-        // const formattedDate1: string = formatDate(data_inicio)
-        // const formattedDate2: string = formatDate(data_termino)
-
         await insertClass(
             id,
             nome,

@@ -31,3 +31,4 @@ export class Estudante {
     public setTurma_id = (turma_id:string) => this.turma_id = turma_id
     }
 
+

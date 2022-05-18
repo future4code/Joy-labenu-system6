@@ -1,18 +1,15 @@
 
-export class Turma {
-    private id: string;
+export class Turmas {
+    
     private nome:string;
     private modulo:string;
 
-
-    constructor(id: string,nome:string,modulo:string){
-        this.id = id
+    constructor(nome:string,modulo:string){
+       
         this.nome = nome
         this.modulo = modulo
     }
-    public getId(): string {
-		return this.id
-	}
+   
     public getNome(): string {
         return this.nome
     }

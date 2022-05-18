@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
 import insertTeacher from '../data/insertTeacher';
+import { Docentes } from '../classes/docente';
+
 
 export default async function createTeacher(
 
@@ -9,7 +11,7 @@ export default async function createTeacher(
 ){
 
     const {nome, email, data, turma_id} = req.body
-
+    const docentes = new Docentes(nome, email, data, turma_id)
     try {
 
         if (
@@ -36,15 +38,15 @@ export default async function createTeacher(
             return year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
         }
 
-        const formattedDataNascimento: string = formatDate(data)
+        const formattedDataNascimento: string = formatDate(docentes.getData_nasc())
 
         await insertTeacher(
             id,
-            nome,
-            email,
+            docentes.getNome(),
+            docentes.getEmail(),
             formattedDataNascimento,
-            turma_id,
-
+            docentes.getTurma_id()
+        
         )
         res
             .status(200).send({

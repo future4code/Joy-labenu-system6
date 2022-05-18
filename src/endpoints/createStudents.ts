@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 import insertStudents from '../data/insertStudents';
-
+import { Estudantes } from '../classes/estudante';
 
 export default async function createStudents(
 
@@ -11,7 +11,8 @@ export default async function createStudents(
 ){
 
     const {nome, email, data, turma_id} = req.body
-
+    const estudantes = new Estudantes(nome, email, data, turma_id)
+   
     try {
          
             if(
@@ -35,16 +36,16 @@ export default async function createStudents(
             return year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
         }
 
-        const formattedData: string = formatDate(data)
+        const formattedData: string = formatDate(estudantes.getData())
 
                 const id: string = Date.now() + Math.random().toString()
 
                 await insertStudents(
                     id,
-                    nome,
-                    email,
+                    estudantes.getNome(),
+                    estudantes.getEmail(),
                     formattedData,
-                    turma_id
+                    estudantes.getTurma_id()
                 )
                 res
                 .status(200).send({

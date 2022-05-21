@@ -12,6 +12,10 @@ import getAgeStudentById from "./endpoints/getAgeStudentById";
 import selectAllStudents from "./endpoints/selectAllStudents"
 import selectAllClass from "./endpoints/selectAllClass"
 import selectAllTheacher from "./endpoints/selectAllTheacher"
+import searchStudent from "./endpoints/searchStudent"
+import editClassModule from "./endpoints/editClassModule" 
+import editStudentClass from "./endpoints/editStudentClass" 
+import editTeacherClass from "./endpoints/editTeacherClass" 
 
 
 
@@ -20,10 +24,14 @@ app.post('/docente', createTeacher)
 app.post('/turma', createClass)
 app.post('/especialidade', createSpecialty)
 app.post('/hobbie', createHobbie)
-app.post('/docente-especialidade', createTeacherWhithSpecialty)
-app.post('/estudante-hobbie', createStudentWithHobby)
+app.post('/docente/especialidade', createTeacherWhithSpecialty)
+app.post('/estudante/hobbie', createStudentWithHobby)
 app.get('/estudante/:id', getAgeStudentById)
+app.get('/estudantes', selectAllStudents)
+app.get('/turmas', selectAllClass)
+app.get('/docentes', selectAllTheacher)
+app.get('/search', searchStudent) 
+app.put('/estudante/:id', editStudentClass)
+app.put('/docente/:id', editTeacherClass)
+app.put('/turma/:id', editClassModule)
 
-app.get('/todos-estudantes', selectAllStudents)
-app.get('/todos-turmas', selectAllClass)
-app.get('/todos-docentes', selectAllTheacher)

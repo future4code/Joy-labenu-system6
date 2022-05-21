@@ -1,11 +1,12 @@
-import { connection } from './connection';
 import { MODULO } from '../types';
+import { connection } from './connection';
+
 
 
 export default async function insertClass(
     id: string,
     nome: string,
-    modulo: any,
+    modulo: MODULO[],
 
 ) {
     await connection.insert(

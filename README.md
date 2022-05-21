@@ -1,7 +1,7 @@
 ## LabenuSystem:
 
 ### Link da Documentação
-### [API LabenuSystem](https://documenter.getpostman.com/view/15418246/UyxjHn9D)
+### [API LabenuSystem Documentation](https://documenter.getpostman.com/view/15418246/UyxjHn9D)
 
 Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
 
